@@ -1,0 +1,73 @@
+Answers_Melanie
+
+1.
+
+a = c
+
+Assigns the variable a the string value "5". 
+
+a == b
+
+Soft compare of a and b, will result in a 'false' return since 5 != 1.
+
+a === c
+
+Hard compare of a and c, will result in a 'false' return since one is a number and one is a string; a == c would be true. 
+
+ 
+2.
+
+a && c
+
+Returns '0' because 0 is seen as false, in order for an && statement to be true each part would have to be true. 
+
+a & b
+
+This returns 0 since in binary 4 = 100 and 2 = 010, they have no 1s in common so the result is 000 which converts back to 0. 
+	
+b || c
+
+Returns 2 since with OR if any of the values are truthy it returns the first truthy value. 
+	
+a | c
+
+Returns 4 since in binary 4 = 100 and 0 = 000, the bitwise OR puts 1s in if either binary has a 1 in that position so we get binary 100 back which converts to 4. 
+	
+a || ( b && ( !(a & b ) ) ) 
+= 4 || (2 && (!(0)))
+= true || (true && not false)
+= true || (true && true)
+= 4 || 2                            
+= 4                                  
+3. 
+Newton’s law 
+ 
+
+Student is using
+
+F = G * mass1 * mass2 / r * r
+
+Order of operations has multiplication and division at the same priority level so when both are present it will perform the operations left to right. So in the student's equation will calculate G times mass1 then that value times mass2 then that value divided by r THEN times r. However, under Newton’s law r should be multiplied by r first and the that’s what G times mass1 times mass2 will be divided by. Lesson = use parenthesis since by order of operation whatever is inn the parenthesis will be calculated first.
+
+Correct code
+
+F = (G * mass1 * mass2) / (r * r)
+
+4. 
+REALLY wanted to use an if statement to do this :)
+
+var year;
+((year % 4) && (year % 100 != 0)) || (year % 400);
+
+If year is a leap year then
+((year % 4) && (year % 100 != 0)) || (year % 400)
+= (0 && false) || 0
+= 0
+
+If the year is not a leap year then
+((year % 4) && (year % 100 != 0)) || (year % 400)
+= (some number && true) || another number
+= some number || another number
+= some number
+
+So if the statement returns 0 then it is a leap year, if a number is returned then it is not a leap year. 
